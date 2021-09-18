@@ -2,11 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html,
 body {
-  background-color: black;
+  background-color: white;
+}
+
+h3 {
+  color: rgb(0, 0, 0);
 }
 
 .slider-wrap {
@@ -15,8 +20,7 @@ body {
   left: 5%;
   width: 90%;
   height: 300px;
-  border: 1px solid white;
-
+  border: 1px solid rgb(0, 0, 0);
   cursor: grab;
 }
 
@@ -38,22 +42,28 @@ body {
   width: 3000px;
   height: 100%;
   display: flex;
-  background-color: red;
 }
 
 .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 250px;
-  height: 100%;
-  background-color: black;
-  border: 1px solid white;
+  height: 98%;
+  top: 1%;
+  background-color: rgb(205, 205, 205);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .progress-bar {
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   left: 0;
-  height: 20px;
+  height: 5px;
   width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .prog-bar-inner {
@@ -62,7 +72,7 @@ body {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: white;
+  background-color: rgb(62, 62, 62);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

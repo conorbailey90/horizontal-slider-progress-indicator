@@ -9,12 +9,12 @@ slider.parentElement.addEventListener('scroll', (e) => {
 
 slider.addEventListener('mousedown', (e) => {
     sliderGrabbed = true;
-    slider.style.cursor = 'grabbing'
+    slider.style.cursor = 'grabbing';
 })
 
 slider.addEventListener('mouseup', (e) => {
     sliderGrabbed = false;
-    slider.style.cursor = 'grab'
+    slider.style.cursor = 'grab';
 })
 
 slider.addEventListener('mouseleave', (e) => {
@@ -23,10 +23,15 @@ slider.addEventListener('mouseleave', (e) => {
 
 slider.addEventListener('mousemove', (e) => {
     if(sliderGrabbed){
-        slider.parentElement.scrollLeft -= e.movementX
+        slider.parentElement.scrollLeft -= e.movementX;
     }
 })
 
+slider.addEventListener('wheel', (e) =>{
+    e.preventDefault()
+    slider.parentElement.scrollLeft += e.deltaY;
+})
+
 function getScrollPercentage(){
-   return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100).toFixed(0)
+   return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100);
 }
